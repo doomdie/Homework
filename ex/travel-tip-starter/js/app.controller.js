@@ -274,7 +274,11 @@ function renderLocStats() {
     locService.getLocCountByRateMap().then(stats => {
         handleStats(stats, 'loc-stats-rate')
     })
+    locService.getLocCountByUpdateMap().then(stats => {
+        handleStats(stats, 'loc-stats-update')
+    })
 }
+
 
 function handleStats(stats, selector) {
     // stats = { low: 37, medium: 11, high: 100, total: 148 }
@@ -311,7 +315,7 @@ function handleStats(stats, selector) {
                 </li>
             `
     }).join('')
-
+    console.log(selector)
     const elLegend = document.querySelector(`.${selector} .legend`)
     elLegend.innerHTML = ledendHTML
 }
