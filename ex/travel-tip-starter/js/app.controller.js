@@ -335,6 +335,7 @@ function cleanStats(stats) {
 }
 
 function onOpenLocDialog() {
+    gLocToSave = null
     document.querySelector('dialog').showModal()
 }
 
@@ -343,9 +344,11 @@ function onCloseLocDialog() {
 }
 
 function onSaveLocDialog() {
+    
     const name = document.querySelector('dialog input[type="text"]').value
+    console.log(name)
     const rate = +document.querySelector('dialog input[type="number"]').value
-
+    
     if (!name || !rate) return
 
     gLocToSave.name = name
@@ -361,6 +364,6 @@ function onSaveLocDialog() {
             console.error('OOPs:', err)
             flashMsg('Cannot save location')
         })
-
+    gLocToSave = null
     document.querySelector('dialog').close()
 }
