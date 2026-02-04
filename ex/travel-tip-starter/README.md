@@ -65,6 +65,19 @@ export const mapService = {
     lookupAddressGeo,
     addClickListener
 }
+export const utilService = {
+    saveToStorage,
+    loadFromStorage,
+    makeId,
+    getRandomIntInclusive,
+    randomPastTime,
+    getRandomLatLng,
+    elapsedTime,
+    getColors,
+    updateQueryParams,
+    getDistance,
+    getNextTheme
+}
 ```
 
 ## Controller
@@ -85,6 +98,7 @@ window.app = {
     onOpenLocDialog,
     onCloseLocDialog,
     onSaveLocDialog,
+    onCycleTheme
 }
 ```
 

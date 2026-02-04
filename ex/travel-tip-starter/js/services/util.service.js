@@ -8,7 +8,64 @@ export const utilService = {
     elapsedTime,
     getColors,
     updateQueryParams,
-    getDistance
+    getDistance,
+    getNextTheme
+}
+const themes = [
+
+{
+
+'--bg1': 'darkslateblue',
+
+'--bg2': 'darkorchid',
+
+'--bg3': 'darkmagenta',
+
+'--color2': 'deeppink',
+
+'--color3': 'gold',
+
+'--color4': 'goldenrod'
+
+},
+
+{
+
+'--bg1': 'rgb(37, 13, 195)',
+
+'--bg2': 'rgb(26, 110, 146)',
+
+'--bg3': 'rgb(9, 49, 226)',
+
+'--color2': 'rgb(94, 169, 240)',
+
+'--color3': 'rgb(211, 187, 48)',
+
+'--color4': 'rgb(90, 66, 6)'
+
+},
+
+{
+
+'--bg1': 'rgb(255, 141, 141)',
+
+'--bg2': 'rgb(192, 54, 36)',
+
+'--bg3': 'rgb(228, 114, 114)',
+
+'--color2': 'rgb(94, 169, 240)',
+
+'--color3': 'rgb(211, 187, 48)',
+
+'--color4': 'rgb(90, 66, 6)'
+
+} ]
+let gCurrThemeIdx = 0
+
+function getNextTheme() {
+    gCurrThemeIdx++
+    if (gCurrThemeIdx >= themes.length) gCurrThemeIdx = 0
+    return themes[gCurrThemeIdx]
 }
 
 function saveToStorage(key, value) {

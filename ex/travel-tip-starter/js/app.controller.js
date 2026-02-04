@@ -22,6 +22,7 @@ window.app = {
     onOpenLocDialog,
     onCloseLocDialog,
     onSaveLocDialog,
+    onCycleTheme
 }
 
 function onInit() {
@@ -369,4 +370,15 @@ function onSaveLocDialog() {
         })
     gLocToSave = null
     document.querySelector('dialog').close()
+}
+function onCycleTheme() {
+    const nextTheme = utilService.getNextTheme() 
+    renderTheme(nextTheme)
+}
+
+function renderTheme(theme) {
+    const root = document.documentElement
+    for (const key in theme) {
+        root.style.setProperty(key, theme[key])
+    }
 }

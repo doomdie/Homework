@@ -27,6 +27,7 @@
         </form>
     </header>
     <main>
+        
         <div class="map"></div>
         <div>
             <section class="locs-container">
@@ -36,6 +37,7 @@
                             oninput="app.onSetFilterBy({txt: this.value})" />
                     </div>
                     <div>
+                         <button onclick ="app.onCycleTheme()">Theme Change</button>
                         <label>
                             Min Rate:
                             <input name="filter-by-rate" type="range" min="0" max="5" value="0"
@@ -79,6 +81,7 @@
                 
             </section>
         </div>
+       
     </main>
     <pre class="debug" hidden></pre>
     <div class="user-msg"></div>
