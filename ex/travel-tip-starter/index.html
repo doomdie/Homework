@@ -82,6 +82,13 @@
     </main>
     <pre class="debug" hidden></pre>
     <div class="user-msg"></div>
+    <dialog>
+        <input type="text" placeholder="Location name" />
+        <input type="number" min="1" max="5" value="3" />
+        <button onclick="app.onSaveLocDialog()">Save</button>
+        <button onclick="app.onCloseLocDialog()">Cancel</button>
+    </dialog>
+
     <script type="module" src="js/app.controller.js"></script>
 </body>
 
