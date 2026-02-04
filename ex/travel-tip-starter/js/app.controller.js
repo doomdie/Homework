@@ -109,6 +109,8 @@ function onSearchAddress(ev) {
 
 function onAddLoc(geo) {
     gLocToSave = { geo }
+    document.querySelector('dialog input[type="text"]').value = geo.address || ''
+    document.querySelector('dialog input[type="number"]').value = 3
     onOpenLocDialog()
 
     // const locName = prompt('Loc name', geo.address || 'Just a place')
@@ -337,6 +339,7 @@ function cleanStats(stats) {
 function onOpenLocDialog() {
     gLocToSave = null
     document.querySelector('dialog').showModal()
+
 }
 
 function onCloseLocDialog() {
